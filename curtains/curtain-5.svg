@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" role="img" aria-label="Curtain collection sample 5">
+  <defs>
+    <linearGradient id="grad5a" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#f5f0e8"/>
+      <stop offset="100%" stop-color="#d8d1c9"/>
+    </linearGradient>
+    <linearGradient id="grad5b" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#c3d8ee"/>
+      <stop offset="100%" stop-color="#7ea7d3"/>
+    </linearGradient>
+    <linearGradient id="grad5c" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#cfc7c0"/>
+      <stop offset="100%" stop-color="#7a736c"/>
+    </linearGradient>
+    <linearGradient id="grad5d" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#d8c86c"/>
+      <stop offset="100%" stop-color="#af8c1d"/>
+    </linearGradient>
+    <linearGradient id="grad5e" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#efefed"/>
+      <stop offset="100%" stop-color="#c2bfc0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="1600" fill="#f3efe8"/>
+
+  <g>
+    <rect x="0" y="0" width="120" height="1600" fill="url(#grad5a)"/>
+    <rect x="120" y="0" width="120" height="1600" fill="#b97d5a" opacity="0.9"/>
+    <rect x="240" y="0" width="120" height="1600" fill="url(#grad5b)"/>
+    <rect x="360" y="0" width="120" height="1600" fill="url(#grad5c)"/>
+    <rect x="480" y="0" width="120" height="1600" fill="url(#grad5d)"/>
+    <rect x="600" y="0" width="120" height="1600" fill="url(#grad5e)"/>
+    <rect x="720" y="0" width="120" height="1600" fill="#c0d0e0"/>
+    <rect x="840" y="0" width="120" height="1600" fill="#9e6d48" opacity="0.85"/>
+    <rect x="960" y="0" width="120" height="1600" fill="#dcd7d0"/>
+    <rect x="1080" y="0" width="120" height="1600" fill="#d6ba5d"/>
+  </g>
+
+  <g opacity="0.72" fill="none" stroke="#f6f1ec" stroke-width="8" stroke-linecap="round">
+    <path d="M20 40 L70 220 M38 70 L96 240 M12 160 L62 350"/>
+    <path d="M140 50 L200 240 M156 70 L216 260 M178 120 L238 320"/>
+    <path d="M260 70 L300 260 M280 80 L326 280 M275 160 L330 360"/>
+    <path d="M380 60 L440 260 M398 80 L458 290 M408 210 L470 350"/>
+    <path d="M500 60 L548 250 M520 80 L570 300 M506 150 L560 350"/>
+    <path d="M620 80 L675 260 M638 80 L698 290 M642 170 L702 370"/>
+    <path d="M740 60 L790 260 M760 90 L812 280 M776 200 L840 370"/>
+    <path d="M860 60 L908 280 M880 80 L932 260 M886 180 L946 350"/>
+    <path d="M980 70 L1032 260 M1000 100 L1058 300 M1008 170 L1066 360"/>
+    <path d="M1098 60 L1140 250 M1106 90 L1160 300 M1118 170 L1168 350"/>
+  </g>
+
+  <g opacity="0.18" fill="#ffffff">
+    <path d="M0 0 H1200 V1600 H0 Z"/>
+  </g>
+</svg>
