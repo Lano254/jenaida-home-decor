@@ -3,24 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jenaida Home Decor | Curtains, Pillows & Fabrics - Gikomba, Nairobi</title>
-    <meta name="description" content="Quality curtains, pillows and fabrics from Gikomba Market, Nairobi. Ready-made & custom. Order on WhatsApp.">
+    <meta name="description" content="Quality curtains, pillows and fabrics from Gikomba Market, Nairobi. Ready-made and custom pieces delivered fast.">
+    <title>Jenaida Home Decor | Curtains, Pillows & Fabrics</title>
     <style>
         :root {
             --primary: #2c3e50;
+            --primary-dark: #1c2d3d;
             --accent: #d9a55f;
             --accent-dark: #b67c2d;
             --soft: #f7f2ee;
             --green: #25D366;
+            --green-dark: #1cad50;
             --text: #2f2f2f;
             --muted: #6f6b67;
             --white: #ffffff;
             --shadow: 0 14px 35px rgba(27, 33, 39, 0.12);
+            --card-shadow: 0 10px 28px rgba(38, 44, 50, 0.09);
         }
 
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
         }
 
@@ -29,48 +30,51 @@
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
             line-height: 1.6;
             color: var(--text);
-            background: linear-gradient(180deg, #fffdfc 0%, #f6f1ee 100%);
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
+            background: linear-gradient(180deg, #fffdfc 0%, #f5efe9 100%);
         }
 
         a {
             color: inherit;
+            text-decoration: none;
         }
 
-        header {
-            background: rgba(44, 62, 80, 0.97);
-            color: white;
-            padding: 1rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 14px rgba(0,0,0,0.08);
-            backdrop-filter: blur(8px);
+        img {
+            display: block;
+            max-width: 100%;
+            height: auto;
         }
 
         .container {
-            max-width: 1100px;
+            width: min(1100px, calc(100% - 32px));
             margin: 0 auto;
-            padding: 0 20px;
         }
 
-        .header-content {
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 40;
+            background: rgba(44, 62, 80, 0.97);
+            color: var(--white);
+            box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+            backdrop-filter: none;
+        }
+
+        .header-inner {
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
+            min-height: 72px;
+            gap: 20px;
         }
 
         .logo {
-            font-size: 1.6rem;
+            font-size: clamp(1.3rem, 2vw, 1.8rem);
             font-weight: 800;
-            letter-spacing: 1px;
+            letter-spacing: 0.04em;
         }
 
         .logo span {
@@ -81,24 +85,27 @@
             display: flex;
             align-items: center;
             gap: 24px;
+            flex-wrap: wrap;
         }
 
         nav a {
-            color: white;
-            text-decoration: none;
+            color: var(--white);
             font-weight: 600;
-            transition: color 0.3s;
+            opacity: 0.96;
+            transition: color 0.2s ease;
         }
 
-        nav a:hover {
+        nav a:hover,
+        nav a:focus-visible {
             color: var(--accent);
         }
 
         .hero {
-            background: linear-gradient(rgba(44, 62, 80, 0.72), rgba(44, 62, 80, 0.78)),
-                        url('images/curtains-patterned.jpg') center/cover;
-            color: white;
-            padding: 110px 20px 90px;
+            background:
+                linear-gradient(rgba(44, 62, 80, 0.72), rgba(44, 62, 80, 0.78)),
+                url("curtains/curtain-5.svg") center/cover no-repeat;
+            color: var(--white);
+            padding: 110px 0 90px;
         }
 
         .hero-inner {
@@ -107,53 +114,68 @@
 
         .hero-badge {
             display: inline-block;
-            background: rgba(255,255,255,0.13);
-            border: 1px solid rgba(255,255,255,0.18);
-            color: #f2efe9;
+            margin-bottom: 18px;
             padding: 8px 14px;
+            border: 1px solid rgba(255,255,255,0.2);
             border-radius: 999px;
-            font-size: 0.8rem;
+            background: rgba(255,255,255,0.08);
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            margin-bottom: 18px;
+            font-size: 0.75rem;
+            font-weight: 700;
         }
 
-        .hero h1 {
+        h1 {
+            margin: 0 0 16px;
             font-size: clamp(2.5rem, 5vw, 4rem);
-            line-height: 1.1;
-            margin-bottom: 16px;
-            font-weight: 800;
+            line-height: 1.08;
+            letter-spacing: -0.04em;
         }
 
         .hero p {
-            font-size: 1.2rem;
-            margin-bottom: 28px;
-            opacity: 0.96;
+            margin: 0 0 28px;
+            font-size: 1.12rem;
             max-width: 620px;
+            color: rgba(255,255,255,0.96);
         }
 
         .hero-actions {
             display: flex;
+            align-items: center;
             flex-wrap: wrap;
             gap: 16px;
+        }
+
+        .btn,
+        .btn-small,
+        .whatsapp-big {
+            display: inline-flex;
             align-items: center;
+            justify-content: center;
+            border-radius: 999px;
+            font-weight: 700;
+            transition: transform 0.22s ease, background 0.22s ease, box-shadow 0.22s ease;
         }
 
         .btn {
-            display: inline-block;
             background: var(--green);
-            color: white;
+            color: var(--white);
             padding: 15px 30px;
-            border-radius: 999px;
-            text-decoration: none;
-            font-weight: 700;
-            transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
             box-shadow: 0 10px 20px rgba(37, 211, 102, 0.35);
         }
 
-        .btn:hover {
-            background: #1cad50;
+        .btn:hover,
+        .btn:focus-visible,
+        .btn-small:hover,
+        .btn-small:focus-visible,
+        .whatsapp-big:hover,
+        .whatsapp-big:focus-visible {
             transform: translateY(-2px);
+        }
+
+        .btn:hover,
+        .btn:focus-visible {
+            background: var(--green-dark);
         }
 
         .btn-secondary {
@@ -162,7 +184,8 @@
             box-shadow: none;
         }
 
-        .btn-secondary:hover {
+        .btn-secondary:hover,
+        .btn-secondary:focus-visible {
             background: rgba(255,255,255,0.08);
         }
 
@@ -171,18 +194,18 @@
         }
 
         .section-title {
+            margin: 0 0 14px;
             text-align: center;
-            font-size: clamp(2rem, 3vw, 2.8rem);
-            margin-bottom: 15px;
             color: var(--primary);
-            font-weight: 800;
+            font-size: clamp(2rem, 3vw, 2.8rem);
+            line-height: 1.15;
         }
 
         .section-subtitle {
+            max-width: 660px;
+            margin: 0 auto 42px;
             text-align: center;
             color: var(--muted);
-            margin: 0 auto 50px;
-            max-width: 650px;
             font-size: 1.05rem;
         }
 
@@ -190,15 +213,14 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 22px;
-            margin-top: 10px;
         }
 
         .feature-card {
-            background: white;
+            background: var(--white);
+            border: 1px solid rgba(44, 62, 80, 0.06);
             border-radius: 18px;
             padding: 30px 22px;
-            box-shadow: var(--shadow);
-            border: 1px solid rgba(44, 62, 80, 0.06);
+            box-shadow: var(--card-shadow);
             text-align: center;
         }
 
@@ -206,173 +228,167 @@
             width: 64px;
             height: 64px;
             line-height: 64px;
+            margin: 0 auto 18px;
             border-radius: 50%;
             background: #f9e8d0;
             color: var(--accent-dark);
             font-size: 1.8rem;
-            margin: 0 auto 18px;
         }
 
         .feature-card h3 {
-            font-size: 1.3rem;
-            margin-bottom: 8px;
+            margin: 0 0 8px;
             color: var(--primary);
+            font-size: 1.28rem;
         }
 
         .feature-card p {
+            margin: 0;
             color: var(--muted);
         }
 
         .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
             gap: 28px;
         }
 
         .product-card {
-            background: white;
-            border-radius: 18px;
             overflow: hidden;
-            box-shadow: var(--shadow);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 18px;
+            background: var(--white);
             border: 1px solid rgba(44, 62, 80, 0.05);
+            box-shadow: var(--card-shadow);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
 
-        .product-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 18px 40px rgba(27, 33, 39, 0.15);
+        .product-card:hover,
+        .product-card:focus-within {
+            transform: translateY(-6px);
+            box-shadow: 0 18px 35px rgba(27, 33, 39, 0.12);
         }
 
         .product-img {
             width: 100%;
-            height: 260px;
+            aspect-ratio: 4 / 3;
             object-fit: cover;
-            display: block;
             background: #eee;
         }
 
         .product-info {
-            padding: 24px 22px 28px;
+            padding: 22px 22px 26px;
         }
 
         .product-info h3 {
-            font-size: 1.45rem;
-            margin-bottom: 8px;
+            margin: 0 0 8px;
             color: var(--primary);
+            font-size: 1.42rem;
         }
 
         .price {
-            font-size: 1.25rem;
-            color: var(--accent-dark);
-            font-weight: 800;
             margin: 10px 0 12px;
+            color: var(--accent-dark);
+            font-size: 1.2rem;
+            font-weight: 800;
         }
 
         .product-info p {
+            margin: 0 0 18px;
             color: var(--muted);
-            margin-bottom: 18px;
-            font-size: 0.98rem;
         }
 
         .btn-small {
-            display: inline-block;
             background: var(--primary);
-            color: white;
+            color: var(--white);
             padding: 11px 22px;
             border-radius: 10px;
-            text-decoration: none;
-            font-size: 0.96rem;
-            font-weight: 700;
-            transition: background 0.3s;
+            font-size: 0.95rem;
         }
 
-        .btn-small:hover {
-            background: #1a252f;
+        .btn-small:hover,
+        .btn-small:focus-visible {
+            background: var(--primary-dark);
         }
 
         .location {
-            background: linear-gradient(135deg, #2c3e50 0%, #233544 100%);
-            color: white;
             padding: 70px 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #233544 100%);
+            color: var(--white);
             text-align: center;
         }
 
         .location h2 {
+            margin: 0 0 20px;
             font-size: clamp(2rem, 3vw, 2.7rem);
-            margin-bottom: 20px;
-            font-weight: 800;
         }
 
         .location p {
-            font-size: 1.15rem;
-            margin-bottom: 10px;
+            margin: 0 0 10px;
+            font-size: 1.12rem;
             color: rgba(255,255,255,0.9);
         }
 
         .contact {
             padding: 80px 0 90px;
+            background: var(--white);
             text-align: center;
-            background: white;
         }
 
         .contact-info {
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto;
         }
 
         .contact p {
+            margin: 0;
             color: var(--muted);
-            font-size: 1.1rem;
+            font-size: 1.08rem;
         }
 
         .phone {
+            margin: 16px 0 10px;
+            color: var(--primary);
             font-size: clamp(1.6rem, 4vw, 2.2rem);
             font-weight: 800;
-            color: var(--primary);
-            margin: 16px 0 10px;
         }
 
         .whatsapp-big {
-            display: inline-block;
-            background: var(--green);
-            color: white;
-            padding: 18px 38px;
-            border-radius: 999px;
-            text-decoration: none;
-            font-size: 1.15rem;
-            font-weight: 700;
             margin-top: 18px;
+            padding: 18px 38px;
+            background: var(--green);
+            color: var(--white);
             box-shadow: 0 10px 22px rgba(37, 211, 102, 0.25);
-            transition: transform 0.25s ease, background 0.25s ease;
         }
 
-        .whatsapp-big:hover {
-            background: #1da851;
-            transform: scale(1.03);
+        .whatsapp-big:hover,
+        .whatsapp-big:focus-visible {
+            background: var(--green-dark);
         }
 
         footer {
+            padding: 26px 20px;
             background: #1a252f;
             color: #c9c9c9;
             text-align: center;
-            padding: 26px 20px;
-            font-size: 0.95rem;
+        }
+
+        footer p {
+            margin: 0;
         }
 
         @media (max-width: 768px) {
-            .header-content {
+            .header-inner {
                 flex-direction: column;
-                gap: 12px;
+                justify-content: center;
+                padding: 12px 0;
             }
 
             nav {
-                gap: 14px;
-                flex-wrap: wrap;
                 justify-content: center;
+                gap: 12px 14px;
             }
 
             .hero {
-                padding-top: 90px;
+                padding-top: 92px;
                 padding-bottom: 70px;
             }
 
@@ -384,19 +400,14 @@
             .section {
                 padding: 60px 0;
             }
-
-            .product-img {
-                height: 220px;
-            }
         }
     </style>
 </head>
 <body>
-
     <header>
-        <div class="container header-content">
+        <div class="container header-inner">
             <div class="logo">Jenaida <span>Home Decor</span></div>
-            <nav>
+            <nav aria-label="Main navigation">
                 <a href="#products">Products</a>
                 <a href="#why-us">Why Us</a>
                 <a href="#location">Location</a>
@@ -409,7 +420,7 @@
         <div class="container">
             <div class="hero-inner">
                 <div class="hero-badge">From Gikomba Market</div>
-                <h1>Beautiful curtains, pillows & fabrics for every home.</h1>
+                <h1>Beautiful curtains, pillows &amp; fabrics for every home.</h1>
                 <p>Quality ready-made and custom pieces. Soft, stylish and affordable — right here in Nairobi.</p>
                 <div class="hero-actions">
                     <a href="https://wa.me/254701260955" class="btn" target="_blank" rel="noopener">💬 Chat on WhatsApp</a>
@@ -433,7 +444,7 @@
 
                 <div class="feature-card">
                     <div class="feature-icon">🛋️</div>
-                    <h3>Ready & Custom</h3>
+                    <h3>Ready &amp; Custom</h3>
                     <p>Ready-made curtains and pillows, or custom sizes made to fit your windows and sofas perfectly.</p>
                 </div>
 
@@ -455,75 +466,58 @@
     <section class="section products" id="products">
         <div class="container">
             <h2 class="section-title">Our Products</h2>
-            <p class="section-subtitle">Real photos from our shop — what you see is what we sell</p>
+            <p class="section-subtitle">Real style from our shop — what you see is what we sell.</p>
 
             <div class="product-grid">
-
-                <!-- Curtains -->
-                <div class="product-card">
-                    <img class="product-img" src="images/curtains-hanging.jpg" alt="Hanging curtain fabrics in many colours" loading="lazy">
+                <article class="product-card">
+                    <img class="product-img" src="curtains/curtain-3.svg" alt="Hanging curtain fabrics in many colours" loading="lazy" decoding="async">
                     <div class="product-info">
                         <h3>Curtains</h3>
                         <div class="price">From KSh 1,500</div>
                         <p>Beautiful ready-made and custom curtains. Many colours, patterns and textures available.</p>
-                        <a href="https://wa.me/254701260955?text=Hello%2C%20I%20want%20to%20inquire%20about%20Curtains" class="btn-small" target="_blank" rel="noopener">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/254701260955?text=Hello%2C%20I%20want%20to%20inquire%20about%20Curtains" class="btn-small" target="_blank" rel="noopener">Order on WhatsApp</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Patterned Curtains -->
-                <div class="product-card">
-                    <img class="product-img" src="images/curtains-patterned.jpg" alt="Patterned and textured curtain fabrics" loading="lazy">
+                <article class="product-card">
+                    <img class="product-img" src="curtains/curtain-5.svg" alt="Patterned and textured curtain fabrics" loading="lazy" decoding="async">
                     <div class="product-info">
                         <h3>Patterned Curtains</h3>
                         <div class="price">From KSh 1,800</div>
                         <p>Rich designs, gold accents, modern and classic patterns. Perfect for living rooms and bedrooms.</p>
-                        <a href="https://wa.me/254701260955?text=Hello%2C%20I%20want%20to%20inquire%20about%20Patterned%20Curtains" class="btn-small" target="_blank" rel="noopener">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/254701260955?text=Hello%2C%20I%20want%20to%20inquire%20about%20Patterned%20Curtains" class="btn-small" target="_blank" rel="noopener">Order on WhatsApp</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Fabrics -->
-                <div class="product-card">
-                    <img class="product-img" src="images/fabrics.jpg" alt="Rolls of fabric in many colours and patterns" loading="lazy">
+                <article class="product-card">
+                    <img class="product-img" src="curtains/curtain-3.svg" alt="Rolls of fabric in many colours and patterns" loading="lazy" decoding="async">
                     <div class="product-info">
                         <h3>Fabrics</h3>
                         <div class="price">From KSh 500 per metre</div>
                         <p>Wide range of quality fabrics for curtains, upholstery, cushions and more. Come choose your favourite.</p>
-                        <a href="https://wa.me/254701260955?text=Hello%2C%20I%20want%20to%20inquire%20about%20Fabrics" class="btn-small" target="_blank" rel="noopener">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/254701260955?text=Hello%2C%20I%20want%20to%20inquire%20about%20Fabrics" class="btn-small" target="_blank" rel="noopener">Order on WhatsApp</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Decorative Pillows -->
-                <div class="product-card">
-                    <img class="product-img" src="images/pillows-decorative.jpg" alt="Decorative and African-inspired throw pillows" loading="lazy">
+                <article class="product-card">
+                    <img class="product-img" src="curtains/curtain-5.svg" alt="Decorative and African-inspired throw pillows" loading="lazy" decoding="async">
                     <div class="product-info">
                         <h3>Decorative Pillows</h3>
                         <div class="price">From KSh 800</div>
                         <p>Stylish throw pillows with African designs, soft textures and bold colours to brighten any room.</p>
-                        <a href="https://wa.me/254701260955?text=Hello%2C%20I%20want%20to%20inquire%20about%20Decorative%20Pillows" class="btn-small" target="_blank" rel="noopener">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/254701260955?text=Hello%2C%20I%20want%20to%20inquire%20about%20Decorative%20Pillows" class="btn-small" target="_blank" rel="noopener">Order on WhatsApp</a>
                     </div>
-                </div>
+                </article>
 
-                <!-- Soft / Plain Pillows -->
-                <div class="product-card">
-                    <img class="product-img" src="images/pillows-stack.jpg" alt="Stack of colourful soft pillows" loading="lazy">
+                <article class="product-card">
+                    <img class="product-img" src="curtains/curtain-3.svg" alt="Stack of colourful soft pillows" loading="lazy" decoding="async">
                     <div class="product-info">
                         <h3>Soft Pillows</h3>
                         <div class="price">From KSh 300</div>
                         <p>Comfortable pillows in many solid colours and textures — perfect for sofas, beds and chairs.</p>
-                        <a href="https://wa.me/254701260955?text=Hello%2C%20I%20want%20to%20inquire%20about%20Soft%20Pillows" class="btn-small" target="_blank" rel="noopener">
-                            Order on WhatsApp
-                        </a>
+                        <a href="https://wa.me/254701260955?text=Hello%2C%20I%20want%20to%20inquire%20about%20Soft%20Pillows" class="btn-small" target="_blank" rel="noopener">Order on WhatsApp</a>
                     </div>
-                </div>
-
+                </article>
             </div>
         </div>
     </section>
@@ -541,18 +535,15 @@
             <h2 class="section-title">Get In Touch</h2>
             <p>Call or WhatsApp us anytime for a quick quote or product inquiry.</p>
             <div class="phone">0701 260 955</div>
-            <a href="https://wa.me/254701260955" class="whatsapp-big" target="_blank" rel="noopener">
-                💬 Message us on WhatsApp
-            </a>
+            <a href="https://wa.me/254701260955" class="whatsapp-big" target="_blank" rel="noopener">💬 Message us on WhatsApp</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
             <p>© 2026 Jenaida Home Decor • Gikomba, Nairobi</p>
-            <p>Quality Curtains, Pillows & Fabrics</p>
+            <p>Quality Curtains, Pillows &amp; Fabrics</p>
         </div>
     </footer>
-
 </body>
 </html>
